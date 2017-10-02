@@ -1,0 +1,7 @@
+public class navigatetochildcontroller {
+
+    @AuraEnabled
+    public static list<sobject> getchildrecords(String parent_id){
+        return null;
+    }
+}

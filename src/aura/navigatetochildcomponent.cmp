@@ -1,0 +1,13 @@
+<aura:component controller="navigatetochildcontroller" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickAction" access="global" >
+    <aura:attribute name="parent_id" type="String"/>
+    <aura:attribute name="child_info" type="Object"/>
+    <aura:attribute name="childcolumns" type="List"/>
+    
+    
+    <aura:handler name="init" value="{!this}" action="{!c.fetchchildinfo}"/>
+    <lightning:datatable data="{! v.child_info }" 
+                         columns="{! v.childcolumns }" 
+                         keyField="id"
+                         onrowselection="{! c.getSelectedName }"
+                         minColumnWidth="50px"/>
+</aura:component>
